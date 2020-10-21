@@ -3,7 +3,7 @@
     <section class="top-section">
       <div class="section-text">
         <h1 class="supa-font logo">
-          SUPA
+          Shahjalal University Photographers' Association
         </h1>
         <h5>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem illo voluptatum exercitationem nam reiciendis totam distinctio, nihil dolore atque ipsum laborum officiis! Incidunt voluptatibus itaque ex sapiente nobis. Iste, non.
@@ -11,9 +11,9 @@
       </div>
       <img class="section-img" src="~/assets/images/landing-top.jpg" alt="">
     </section>
-    <div class="carousel-container">
+    <!-- <div class="carousel-container">
       <carousel class="carousel"/>
-    </div>
+    </div> -->
     <div class="vfpanel">
       <h2 class="h2-underline">Viewfinder Articles</h2>
       <vfBig class="big" />
@@ -59,10 +59,10 @@ export default {
 section {
   display: grid;
   justify-content: space-evenly;
-  grid-template-areas: ". text . img .";
-  grid-template-columns: .5fr 2fr .25fr 1fr .5fr;
-  justify-content: center;
+  grid-template-areas: "text . img";
+  grid-template-columns: 2fr .25fr 1fr;
   align-content: center;
+  padding: 5vh 10vw;
 
   .section-text {
     grid-area: text;
@@ -73,32 +73,40 @@ section {
 
   .section-img {
     grid-area: img;
-    height: 60vh;
+    height: 30vw;
+    min-height: 300px;
   }
 }
 
 .top-section {
-  height: 100vh;
-}
+  padding-top: 20vh;
+  padding-bottom: 0;
+  // height: 100vh;
 
-.logo {
-  font-size: 6em;
-}
-
-.carousel-container {
-  display: grid;
-  grid-template-areas: ". carousel .";
-
-  .carousel {
-    grid-area: carousel;
+  .section-img {
+    min-height: 400px;
   }
 }
 
+.logo {
+  font-size: 3em;
+  font-weight: 100;
+}
+
+// .carousel-container {
+//   display: grid;
+//   grid-template-areas: ". carousel .";
+
+//   .carousel {
+//     grid-area: carousel;
+//   }
+// }
+
 .vfpanel {
   display: grid;
-  grid-template-areas: ". title . . ." ". big . small .";
-  grid-template-columns: 7vw 1fr .5em 1fr 7vw;
-  padding-bottom: 10vh;
+  grid-template-areas: "title . ." "big . small";
+  grid-template-columns: 1fr .5em 1fr;
+  padding: 10vh 10vw;
 
   .h2-underline {
     grid-area: title;
@@ -117,15 +125,12 @@ section {
   }
 }
 
-.team {
-  padding-bottom: 10vh;
-}
-
 .member-section {
   display: grid;
   grid-template-areas: ". title ." ". members ." ". link .";
   grid-template-columns: 7vw 1fr 7vw;
   align-items: center;
+  padding: 10vh 10vw;
 
   .h2-underline-center {
     grid-area: title;
@@ -136,6 +141,7 @@ section {
     grid-area: members;
     display: flex;
     justify-content: space-evenly;
+    gap: .5em;
   }
 
   a {
