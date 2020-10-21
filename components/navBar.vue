@@ -1,26 +1,46 @@
 <template>
   <div class="nav">
-    <nuxt-link to="/" class="supa-font logo" aria-label="homepage">SUPA</nuxt-link>
-      <nav class="main-nav">
-        <ul class="nav__list">
-          <li class="nav__list-item">
-            <nuxt-link to="/" class="nav__link">Viewfinder</nuxt-link>
-          </li>
-          <li class="nav__list-item">
-            <nuxt-link to="/" class="nav__link">Visual Fest</nuxt-link>
-          </li>
-          <li class="nav__list-item">
-            <nuxt-link to="/" class="nav__link">Our Photographs</nuxt-link>
-          </li>
-          <li class="nav__list-item"><nuxt-link to="/" class="nav__link">About Us</nuxt-link></li>
-        </ul>
-      </nav>
+    <nuxt-link to="/" class="supa-font logo" aria-label="homepage"
+      >SUPA</nuxt-link
+    >
+    <nav class="main-nav">
+      <ul class="nav__list">
+        <li class="nav__list-item">
+          <nuxt-link to="/" class="nav__link">Viewfinder</nuxt-link>
+        </li>
+        <li class="nav__list-item">
+          <nuxt-link to="/" class="nav__link">Visual Fest</nuxt-link>
+        </li>
+        <li class="nav__list-item">
+          <nuxt-link to="/" class="nav__link">Our Photographs</nuxt-link>
+        </li>
+        <li class="nav__list-item dropdown">
+          <p to="/" class="nav__link no-underline">
+            About Us <font-awesome-icon :icon="['fas', 'chevron-down']" />
+          </p>
+          <ul class="nav__list submenu">
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">Activities</nuxt-link>
+            </li>
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">Team</nuxt-link>
+            </li>
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">Advisors</nuxt-link>
+            </li>
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">About</nuxt-link>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
 </template>
 
 <script>
 export default {
-    name: 'navBar'
+  name: 'navBar',
 }
 </script>
 
@@ -67,7 +87,7 @@ export default {
   font-size: 0.9rem;
 
   &:after {
-    content: "";
+    content: '';
     position: absolute;
     bottom: 0;
     left: var(--spacing);
@@ -81,34 +101,38 @@ export default {
   &:hover::after {
     transform: scaleX(1);
   }
+}
 
-  &--btn {
-    border: 1.5px solid currentColor;
-    border-radius: 2em;
-    margin-left: 1em;
-    transition: background 250ms ease-in-out;
-    letter-spacing: 1px;
-    padding: 0.75em 1.5em;
+.dropdown {
+  cursor: pointer;
+  position: relative;
 
-    &:hover {
-      background: var(--text);
-      color: var(--text-inverse);
-      border-color: var(--text);
-    }
+  .no-underline::after {
+    all: unset;
+  }
 
-    &::after {
-      display: none;
-    }
+  .no-underline:hover::after {
+    all: unset;
+  }
 
-    &--highlight {
-      background: limegreen;
-      border-color: limegreen;
-      color: #333;
+  &:hover > ul,
+  ul:hover {
+    visibility: visible;
+  }
 
-      &:hover {
-        background: var(--text);
-        border-color: var(--text);
-      }
+  ul {
+    padding: .5em 0;
+    visibility: hidden;
+    position: absolute;
+    width: 10em;
+    // bottom: 1em;
+    // transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    background: var(--background);
+
+    li {
+      padding: .5em 1em;
     }
   }
 }
