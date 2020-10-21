@@ -12,7 +12,23 @@
           <nuxt-link to="/" class="nav__link">Visual Fest</nuxt-link>
         </li>
         <li class="nav__list-item">
-          <nuxt-link to="/" class="nav__link">Our Photographs</nuxt-link>
+          <nuxt-link to="/" class="nav__link">Gallery</nuxt-link>
+        </li>
+        <li class="nav__list-item dropdown">
+          <p to="/" class="nav__link">
+            Events <font-awesome-icon :icon="['fas', 'chevron-down']" />
+          </p>
+          <ul class="nav__list submenu">
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">Inquest Insight</nuxt-link>
+            </li>
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">Hiraeth</nuxt-link>
+            </li>
+            <li class="nav__list-item">
+              <nuxt-link to="/" class="nav__link">Other Exhibitions</nuxt-link>
+            </li>
+          </ul>
         </li>
         <li class="nav__list-item dropdown">
           <p to="/" class="nav__link no-underline">
