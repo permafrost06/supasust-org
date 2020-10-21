@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <section class="top-section">
       <div class="section-text">
         <h1 class="supa-font logo">
@@ -30,15 +30,15 @@
       </div>
       <img class="section-img" src="~/assets/images/team-photo.jpg" alt="">
     </section>
-    <section class="member-section">
-      <h2 class="h2-underline-center">23rd Executive Committee</h2>
+    <div class="member-section">
+      <h2 class="h2-underline-center">Executive Committee</h2>
       <div class="member-list">
         <member/>
         <member/>
         <member/>
       </div>
       <a href="#">See all committee members</a>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -56,13 +56,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.container {
+  padding: 10vw;
+}
+
 section {
   display: grid;
   justify-content: space-evenly;
   grid-template-areas: "text . img";
   grid-template-columns: 2fr .25fr 1fr;
   align-content: center;
-  padding: 5vh 10vw;
+  padding-bottom: 10vh;
 
   .section-text {
     grid-area: text;
@@ -78,14 +82,8 @@ section {
   }
 }
 
-.top-section {
-  padding-top: 20vh;
-  padding-bottom: 0;
-  // height: 100vh;
-
-  .section-img {
-    min-height: 400px;
-  }
+.section-img {
+  min-height: 400px;
 }
 
 .logo {
@@ -106,7 +104,7 @@ section {
   display: grid;
   grid-template-areas: "title . ." "big . small";
   grid-template-columns: 1fr .5em 1fr;
-  padding: 10vh 10vw;
+  padding-bottom: 10vh;
 
   .h2-underline {
     grid-area: title;
@@ -126,29 +124,15 @@ section {
 }
 
 .member-section {
-  display: grid;
-  grid-template-areas: ". title ." ". members ." ". link .";
-  grid-template-columns: 7vw 1fr 7vw;
-  align-items: center;
-  padding: 10vh 10vw;
-
-  .h2-underline-center {
-    grid-area: title;
-    justify-self: center;
-  }
-
-  .member-list {
-    grid-area: members;
     display: flex;
-    justify-content: space-evenly;
-    gap: .5em;
-  }
+    flex-direction: column;
+    align-items: center;
 
-  a {
-    grid-area: link;
-    justify-self: center;
-    padding: 1em;
-    text-decoration: underline;
-  }
+    .member-list {
+        display: flex;
+        justify-content: space-evenly;
+        gap: .5em;
+        padding-bottom: 5vh;
+    }
 }
 </style>

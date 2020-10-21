@@ -46,6 +46,10 @@ body {
   background-color: #202020;
 }
 
+h1 {
+  padding: .5em 0;
+}
+
 .h2-underline:after {
   display: block;
   content: '';
@@ -83,6 +87,10 @@ h5 {
   font-weight: 400;
 }
 
+p {
+  padding: 1em 0;
+}
+
 a {
   color: white;
   text-decoration: none;
@@ -99,6 +107,10 @@ a {
 .description {
   margin: 10px 0px;
   margin-left: -5px;
+}
+
+.full-width {
+  width: 100%;
 }
 
 *,

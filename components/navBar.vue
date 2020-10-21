@@ -9,43 +9,27 @@
           <nuxt-link to="/" class="nav__link">Viewfinder</nuxt-link>
         </li>
         <li class="nav__list-item">
-          <nuxt-link to="/" class="nav__link">Visual Fest</nuxt-link>
-        </li>
-        <li class="nav__list-item">
           <nuxt-link to="/" class="nav__link">Gallery</nuxt-link>
         </li>
-        <li class="nav__list-item dropdown">
-          <p to="/" class="nav__link">
-            Events <font-awesome-icon :icon="['fas', 'chevron-down']" />
-          </p>
-          <ul class="nav__list submenu">
-            <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">Inquest Insight</nuxt-link>
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">Hiraeth</nuxt-link>
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">Other Exhibitions</nuxt-link>
-            </li>
-          </ul>
+        <li class="nav__list-item">
+          <nuxt-link to="/events" class="nav__link">Events</nuxt-link>
         </li>
         <li class="nav__list-item dropdown">
-          <p to="/" class="nav__link no-underline">
+          <p class="nav__link no-underline">
             About Us <font-awesome-icon :icon="['fas', 'chevron-down']" />
           </p>
           <ul class="nav__list submenu">
             <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">Activities</nuxt-link>
+              <nuxt-link to="/activities" class="nav__link">Activities</nuxt-link>
             </li>
             <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">Team</nuxt-link>
+              <nuxt-link to="/team" class="nav__link">Team</nuxt-link>
             </li>
             <li class="nav__list-item">
               <nuxt-link to="/" class="nav__link">Advisors</nuxt-link>
             </li>
             <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">About</nuxt-link>
+              <nuxt-link to="/about" class="nav__link">About</nuxt-link>
             </li>
           </ul>
         </li>
@@ -68,7 +52,7 @@ export default {
 .nav {
   --text: #f4f4f4;
   --text-inverse: #333;
-  --background: rgba(0, 0, 0, 0.51);
+  --background: rgba(0, 0, 0, 1);
 
   position: fixed;
   top: 0;
@@ -137,18 +121,16 @@ export default {
   }
 
   ul {
-    padding: .5em 0;
+    padding: 0.5em 0;
     visibility: hidden;
     position: absolute;
     width: 10em;
-    // bottom: 1em;
-    // transition: all 0.5s ease;
     display: flex;
     flex-direction: column;
     background: var(--background);
 
     li {
-      padding: .5em 1em;
+      padding: 0.5em 1em;
     }
   }
 }
