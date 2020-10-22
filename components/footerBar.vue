@@ -11,9 +11,11 @@
                 <li><a href="#">supa@sust.edu</a></li>
             </ul>
             <ul class="socials">
-                <li><a href="#"><font-awesome-icon :icon="['fab', 'instagram-square']" /></a>
+                <li>
+                    <a href="#"><font-awesome-icon class="fa-2x" :icon="['fab', 'instagram-square']" /></a>
                 </li>
-                <li><a href="#"><font-awesome-icon :icon="['fab', 'facebook-square']" /></a>
+                <li>
+                    <a href="#"><font-awesome-icon class="fa-2x" :icon="['fab', 'facebook-square']" /></a>
                 </li>
             </ul>
         </div>
@@ -49,7 +51,6 @@ export default {
 
         .socials li {
             display: inline-block;
-            width: 1em;
         }
     }
 }

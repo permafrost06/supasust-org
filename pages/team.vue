@@ -29,19 +29,56 @@
     <section class="member-section">
       <h2 class="h2-underline-center">23rd Executive Committee</h2>
       <div class="member-list">
-        <member />
-        <member />
-        <member />
-        <member />
-        <member />
-        <member />
-        <member />
-        <member />
-        <member />
+        <div v-for="member in members" v-bind:key="member.id">
+          <member v-bind="member" />
+        </div>
       </div>
     </section>
   </div>
 </template>
+
+<script>
+import member from '../components/member'
+export default {
+  components: member,
+  data() {
+    return {
+      members: [
+        {
+          id: 1,
+          img: 'members/Shohan Ur Rahaman.jpg',
+          name: 'Shohan Ur Rahman',
+          designation: 'President',
+        },
+        {
+          id: 2,
+          img: 'members/Sakeef Wahed.jpg',
+          name: 'Sakeef Wahed',
+          designation: 'Vice-President',
+        },
+        {
+          id: 3,
+          img: 'members/Adila Zaman.jpg',
+          name: 'Adila Zaman',
+          designation: 'Vice-President',
+        },
+        {
+          id: 4,
+          img: 'members/Mashfik Upal Aumy.jpg',
+          name: 'Mashfik Upal Aumy',
+          designation: 'Vice-President',
+        },
+        {
+          id: 5,
+          img: 'members/Prem Raj Saha.jpg',
+          name: 'Prem Raj Saha',
+          designation: 'General Secretary',
+        },
+      ],
+    }
+  },
+}
+</script>
 
 <style lang="scss" scoped>
 .container {
@@ -49,20 +86,20 @@
 }
 
 section {
-    padding-bottom: 10vh;
+  padding-bottom: 10vh;
 }
 
 .member-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    flex-wrap: wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: wrap;
 
-    .member-list {
-        display: grid;
-        justify-content: space-evenly;
-        gap: .5em;
-        grid-template-columns: repeat(3, 1fr);
-    }
+  .member-list {
+    display: grid;
+    justify-content: space-evenly;
+    gap: 0.5em;
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 </style>
