@@ -1,10 +1,15 @@
 <template>
-  <div class="container">
-    <div class="image"></div>
-    <div class="backdrop">
+  <div class="member-container">
+    <img
+      :src="require(`../assets/images/${img}`)"
+      alt=""
+      height="250px"
+      width="250px"
+    />
+    <figcaption class="backdrop">
       <h3>{{ name }}</h3>
       <div>{{ designation }}</div>
-    </div>
+    </figcaption>
   </div>
 </template>
 
@@ -23,30 +28,27 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.container {
+.member-container {
   position: relative;
-  display: inline-block;
-  height: 10vw;
-  max-height: 250px;
 }
 
-.image {
-  position: absolute;
-  top: 0;
-  left: 0;
+img {
   width: 100%;
-  height: 100%;
-  background: url('~assets/images/blank-profile.jpg');
-  background-repeat: no-repeat;
-  background-size: 100% auto;
+  display: block;
+  position: relative;
+  margin: 0;
+  border: none;
+  max-width: 100%;
+  height: auto;
 }
 
-.backdrop {
-  position: absolute;
-  padding: 1em 1em 1.5em 1em;
+figcaption {
   bottom: 0;
   left: 0;
-  width: 100%;
+  right: 0;
+  position: absolute;
+  padding: 20px;
+  overflow: hidden;
   background-color: rgba(0, 0, 0, 0.51);
 }
 </style>
