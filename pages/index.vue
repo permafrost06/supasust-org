@@ -45,7 +45,8 @@
           <member v-bind="member" />
         </div>
       </div>
-      <a href="#">See all committee members</a>
+      <nuxt-link to="/team" class="nav__link">See all committee members</nuxt-link>
+
     </div>
   </div>
 </template>

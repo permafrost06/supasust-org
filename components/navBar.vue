@@ -26,7 +26,7 @@
               <nuxt-link to="/team" class="nav__link">Team</nuxt-link>
             </li>
             <li class="nav__list-item">
-              <nuxt-link to="/" class="nav__link">Advisors</nuxt-link>
+              <nuxt-link to="/advisors" class="nav__link">Advisors</nuxt-link>
             </li>
             <li class="nav__list-item">
               <nuxt-link to="/about" class="nav__link">About</nuxt-link>
