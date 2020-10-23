@@ -44,6 +44,14 @@ export default {
   display: flex;
   align-items: center;
   position: relative;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    .description {
+      padding: 1em 2em;
+    }
+  }
 }
 
 img {

@@ -66,9 +66,9 @@ export default {
   left: -9999px !important;
 }
 
-.nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(lightblue, 0.75);
-}
+// .nav-toggle:focus ~ .nav-toggle-label {
+//   outline: 3px solid rgba(lightblue, 0.75);
+// }
 
 .nav-toggle-label {
   position: absolute;
@@ -122,9 +122,9 @@ export default {
   left: -9999px !important;
 }
 
-.sub-nav-toggle:focus ~ .sub-nav-toggle-label {
-  outline: 3px solid rgba(lightblue, 0.75);
-}
+// .sub-nav-toggle:focus ~ .sub-nav-toggle-label {
+//   outline: 3px solid rgba(lightblue, 0.75);
+// }
 
 .sub-nav-toggle:checked + label + ul {
   visibility: visible;

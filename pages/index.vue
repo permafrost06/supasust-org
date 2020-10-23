@@ -17,8 +17,8 @@
     <!-- <div class="carousel-container">
       <carousel class="carousel"/>
     </div> -->
+    <h2 class="h2-underline">Viewfinder Articles</h2>
     <div class="vfpanel">
-      <h2 class="h2-underline">Viewfinder Articles</h2>
       <vfBig class="big" />
       <div class="small">
         <vfSmall />
@@ -32,25 +32,26 @@
         <div class="description">
           <p class="no-padding">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum autem
-            quia, perferendis voluptatum aperiam aliquid nostrum praesentium saepe
-            facilis molestiae cumque, dolorum eius consectetur quas quidem atque,
-            vero nesciunt possimus.
+            quia, perferendis voluptatum aperiam aliquid nostrum praesentium
+            saepe facilis molestiae cumque, dolorum eius consectetur quas quidem
+            atque, vero nesciunt possimus.
           </p>
         </div>
       </div>
-      <img class="section-img" src="~/assets/images/team-photo.jpg" alt="" />
+      <img
+        class="section-img-landscape"
+        src="~/assets/images/team-photo.jpg"
+        alt=""
+      />
     </section>
     <div class="member-section">
       <h2 class="h2-underline-center">Executive Committee</h2>
       <div class="member-list">
-        <!-- <div v-for="member in members" v-bind:key="member.id">
+        <div v-for="member in members" v-bind:key="member.id">
           <member v-bind="member" />
-        </div> -->
-        <member v-bind="members[0]" />
-        <member v-bind="members[1]" />
-        <member class="center-align" v-bind="members[2]" />
+        </div>
       </div>
-      <nuxt-link to="/team" class="nav__link"
+      <nuxt-link to="/team" class="nuxt_link"
         >See all committee members</nuxt-link
       >
     </div>
@@ -100,20 +101,17 @@ export default {
 <style lang="scss" scoped>
 .container {
   padding: 10vw;
+
+  @media (max-width: 850px) {
+    padding: 10vh 10vw;
+  }
 }
 
 section {
   display: flex;
   justify-content: space-evenly;
-  // grid-template-areas: 'text . img';
-  // grid-template-columns: 2fr 0.25fr 1fr;
-  // align-content: center;
-  padding-bottom: 10vh;
+  padding: 5vh 0;
   align-items: center;
-
-  @media (max-width: 850px) {
-    flex-direction: column;
-  }
 
   .big-text {
     font-size: 1.25em;
@@ -130,6 +128,27 @@ section {
     grid-area: img;
     height: 30vw;
     min-height: 300px;
+  }
+
+  .section-img-landscape {
+    width: 100vw;
+  }
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+
+    h1 {
+      padding: 0;
+    }
+
+    .section-img {
+      max-height: 40vh;
+      max-width: 80vw;
+    }
+
+    .section-img-landscape {
+      width: 80vw;
+    }
   }
 }
 
@@ -152,16 +171,11 @@ section {
 // }
 
 .vfpanel {
-  display: grid;
-  grid-template-areas: 'title . .' 'big . small';
-  grid-template-columns: 1fr 0.5em 1fr;
-  padding-bottom: 10vh;
+  display: flex;
+  gap: 0.5em;
 
   @media (max-width: 1300px) {
-    grid-template-areas: 'title' 'big' 'small';
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 450px auto;
-    gap: 0.5em;
+    flex-direction: column;
   }
 
   .h2-underline {
@@ -175,7 +189,6 @@ section {
   }
 
   .small {
-    grid-area: small;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
@@ -195,8 +208,16 @@ section {
     padding-bottom: 1em;
 
     @media (max-width: 750px) {
-      grid-template-columns: repeat(1, 1fr);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1em;
       padding: 0 3em 1em 3em;
+    }
+
+    .nuxt_link {
+      font-size: 0.75em;
+      text-align: center;
     }
   }
 }

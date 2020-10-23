@@ -31,6 +31,14 @@ export default {
   background-color: rgba(0, 0, 0, 0.51);
   display: flex;
   align-items: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+
+    .description {
+      padding: 1em 2em;
+    }
+  }
 }
 
 img {

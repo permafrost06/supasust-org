@@ -67,6 +67,10 @@ export default {
 .container {
   padding: 10vw;
 
+  @media (max-width: 850px) {
+    padding: 10vh 10vw;
+  }
+
   & > div {
     padding: 2em 0;
   }
