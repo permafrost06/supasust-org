@@ -25,8 +25,11 @@ export default {
 
 img {
     height: 20vh;
-    object-fit: cover;
     padding: .75em;
+
+    @media (max-width: 1300px) {
+        height: 20vw;
+    }
 }
 
 h4 {

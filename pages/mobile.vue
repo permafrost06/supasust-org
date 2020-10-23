@@ -3,9 +3,10 @@
     <section class="top-section">
       <div class="section-text">
         <h1 class="supa-font logo">
-          Shahjalal University Photographers' Association
+          Shahjalal University<br />
+          Photographers' Association
         </h1>
-        <p class="big-text">
+        <p>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem illo
           voluptatum exercitationem nam reiciendis totam distinctio, nihil
           dolore atque ipsum laborum officiis! Incidunt voluptatibus itaque ex
@@ -32,9 +33,9 @@
         <div class="description">
           <p class="no-padding">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum autem
-            quia, perferendis voluptatum aperiam aliquid nostrum praesentium saepe
-            facilis molestiae cumque, dolorum eius consectetur quas quidem atque,
-            vero nesciunt possimus.
+            quia, perferendis voluptatum aperiam aliquid nostrum praesentium
+            saepe facilis molestiae cumque, dolorum eius consectetur quas quidem
+            atque, vero nesciunt possimus.
           </p>
         </div>
       </div>
@@ -43,14 +44,11 @@
     <div class="member-section">
       <h2 class="h2-underline-center">Executive Committee</h2>
       <div class="member-list">
-        <!-- <div v-for="member in members" v-bind:key="member.id">
+        <div v-for="member in members" v-bind:key="member.id">
           <member v-bind="member" />
-        </div> -->
-        <member v-bind="members[0]" />
-        <member v-bind="members[1]" />
-        <member class="center-align" v-bind="members[2]" />
+        </div>
       </div>
-      <nuxt-link to="/team" class="nav__link"
+      <nuxt-link to="/team" class="nuxt_link"
         >See all committee members</nuxt-link
       >
     </div>
@@ -99,83 +97,31 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  padding: 10vw;
+  padding: 10vh 10vw;
 }
 
 section {
   display: flex;
-  justify-content: space-evenly;
-  // grid-template-areas: 'text . img';
-  // grid-template-columns: 2fr 0.25fr 1fr;
-  // align-content: center;
-  padding-bottom: 10vh;
+  flex-direction: column;
   align-items: center;
+  padding: 5vh 0;
 
-  @media (max-width: 850px) {
-    flex-direction: column;
-  }
-
-  .big-text {
-    font-size: 1.25em;
-  }
-
-  .section-text {
-    grid-area: text;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  h1 {
+    padding: 0;
   }
 
   .section-img {
-    grid-area: img;
-    height: 30vw;
-    min-height: 300px;
+    max-height: 40vh;
+    max-width: 80vw;
   }
 }
-
-.section-img {
-  min-height: 400px;
-}
-
-.logo {
-  font-size: 3em;
-  font-weight: 100;
-}
-
-// .carousel-container {
-//   display: grid;
-//   grid-template-areas: ". carousel .";
-
-//   .carousel {
-//     grid-area: carousel;
-//   }
-// }
 
 .vfpanel {
-  display: grid;
-  grid-template-areas: 'title . .' 'big . small';
-  grid-template-columns: 1fr 0.5em 1fr;
-  padding-bottom: 10vh;
-
-  @media (max-width: 1300px) {
-    grid-template-areas: 'title' 'big' 'small';
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 450px auto;
-    gap: 0.5em;
-  }
-
-  .h2-underline {
-    grid-area: title;
-    margin: 0.5em;
-  }
-
-  .big {
-    grid-area: big;
-    // height: calc(60vh + 1em);
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
 
   .small {
-    grid-area: small;
     display: flex;
     flex-direction: column;
     gap: 0.5em;
@@ -183,21 +129,22 @@ section {
 }
 
 .member-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3em;
 
-  .member-list {
-    display: grid;
-    justify-content: space-evenly;
-    gap: 0.5em;
-    grid-template-columns: repeat(3, 1fr);
-    padding-bottom: 1em;
-
-    @media (max-width: 750px) {
-      grid-template-columns: repeat(1, 1fr);
-      padding: 0 3em 1em 3em;
+    .member-list {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+        padding-bottom: 1em;
     }
-  }
+
+    .nuxt_link {
+        font-size: .75em;
+        text-align: center;
+    }
 }
 </style>

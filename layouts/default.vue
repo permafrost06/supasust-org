@@ -17,7 +17,12 @@ import footerBar from '../components/footerBar'
 export default {
   components: {
     navBar, footerBar
-  }
+  },
+  // head: {
+  //    bodyAttrs: {
+  //      'ontouchstart': ''
+  //    }
+  // }
 }
 </script>
 
@@ -25,9 +30,9 @@ export default {
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @font-face {
-    font-family: 'bauhaus_93regular';
-    src: url('~assets/fonts/bauhs93-webfont.woff') format('woff'),
-    url('~assets/fonts/bauhs93-webfont.woff2') format('woff2')
+  font-family: 'bauhaus_93regular';
+  src: url('~assets/fonts/bauhs93-webfont.woff') format('woff'),
+    url('~assets/fonts/bauhs93-webfont.woff2') format('woff2');
 }
 
 html {
@@ -47,7 +52,13 @@ body {
 }
 
 h1 {
-  padding: .5em 0;
+  padding: 0.5em 0;
+}
+
+@media (max-width: 620px) {
+  h2 {
+    font-size: 1em;
+  }
 }
 
 .h2-underline:after {
@@ -80,6 +91,10 @@ h1 {
 
 h4 {
   font-weight: 500;
+
+  @media (max-width: 620px) {
+    font-size: 0.75em;
+  }
 }
 
 h5 {
@@ -89,6 +104,14 @@ h5 {
 
 p {
   padding: 1em 0;
+
+  @media (max-width: 620px) {
+    font-size: 1em;
+  }
+
+  &.no-padding {
+    padding: 0;
+  }
 }
 
 a {

@@ -36,6 +36,21 @@ export default {
     padding: 5vh 7em;
     background-color: rgba(0, 0, 0, 1);
 
+    @media (max-width: 1100px) {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+
+        .dev {
+            padding: 1em 0;
+            text-align: right;
+        }
+    }
+
+    @media (max-width: 600px) {
+        padding: 5vh 3em;
+        font-size: .75em;
+    }
+
     ul {
         list-style: none;
         margin: 0;

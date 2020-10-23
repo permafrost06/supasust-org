@@ -1,46 +1,59 @@
 <template>
-  <div class="container">
-    <div class="image"></div>
-    <div class="backdrop">
-      <h3>
-        Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-        do eiusmod tempor incididunt.
-      </h3>
-    </div>
+  <div class="vfbig-container">
+    <a href="#">
+      <div class="content">
+        <h4>
+          Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+          do eiusmod tempor incididunt.
+        </h4>
+        <img src="~/assets/images/vf-photo-2.jpg" alt="" />
+      </div>
+    </a>
   </div>
 </template>
 
 <script>
 export default {
   name: 'vfBig',
-  props: ['img', 'caption'],
+  props: {
+    img: {
+      type: String,
+      default: 'blank-profile.jpg',
+    },
+    caption: {
+      type: String,
+      default:
+        'Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
-.container {
-  position: relative;
-  display: inline-block;
-}
+.vfbig-container {
+  display: flex;
+  background: rgba(0, 0, 0, 0.51);
+  padding: 1em;
+  align-items: center;
+  justify-content: center;
 
-.image {
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:url('~assets/images/vf-photo-1.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+    
+    h4 {
+      text-align: center;
+      max-width: 500px;
+    }
 
-.backdrop {
-  position:absolute;
-  padding: 1em 1em 1.5em 1em;
-  bottom:0;
-  left:0;
-  width:100%;
-  background-color: rgba(0, 0, 0, 0.51);
+    img {
+      max-height: 350px;
+      height: 50vw;
+      padding: 0.75em;
+    }
+  }
 }
 </style>

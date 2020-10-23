@@ -1,11 +1,6 @@
 <template>
   <div class="member-container">
-    <img
-      :src="require(`../assets/images/${img}`)"
-      alt=""
-      height="250px"
-      width="250px"
-    />
+    <img :src="require(`../assets/images/${img}`)" alt="" />
     <figcaption class="backdrop">
       <h3>{{ name }}</h3>
       <div>{{ designation }}</div>
