@@ -45,5 +45,10 @@ figcaption {
   padding: 20px;
   overflow: hidden;
   background-color: rgba(0, 0, 0, 0.51);
+  
+  @media (max-width: 750px) {
+    font-size: .4em;
+    padding: 5px;
+  }
 }
 </style>
