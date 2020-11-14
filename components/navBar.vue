@@ -1,54 +1,107 @@
 <template>
   <div class="nav">
-    <nuxt-link to="/" class="supa-font logo" aria-label="homepage"
-      >SUPA</nuxt-link
-    >
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-    <nav class="main-nav">
+    <nuxt-link to="/" class="supa-font logo">SUPA</nuxt-link>
+    <nav :class="[{'nav-active':navActive}, 'main-nav']">
       <ul class="nav__list">
-        <li class="nav__list-item">
-          <nuxt-link to="/" class="nav__link">Viewfinder</nuxt-link>
+        <li class="nav__list-item" v-for="item in nav_items" :key="item.name">
+          <nuxt-link
+            :to="item.link"
+            class="nav__link"
+            v-if="item.type == 'internal'"
+            >{{ item.name }}</nuxt-link
+          >
+          <a
+            :href="item.link"
+            class="nav__link"
+            v-if="item.type == 'external'"
+            >{{ item.name }}</a
+          >
         </li>
-        <li class="nav__list-item">
-          <nuxt-link to="/" class="nav__link">Gallery</nuxt-link>
-        </li>
-        <li class="nav__list-item">
-          <nuxt-link to="/events" class="nav__link">Events</nuxt-link>
-        </li>
-        <li class="nav__list-item dropdown" tabindex="1">
-          <input type="checkbox" id="sub-nav-toggle" class="sub-nav-toggle" />
-          <label for="sub-nav-toggle" class="nav__link no-underline sub-nav-toggle-label">
-            About Us <font-awesome-icon :icon="['fas', 'chevron-down']" />
-          </label>
+        <li class="nav__list-item dropdown" v-if="dropdown">
+            {{ dropdown_name }}
+            <font-awesome-icon :icon="['fas', 'chevron-down']" />
           <ul class="nav__list submenu">
-            <li class="nav__list-item">
-              <nuxt-link to="/activities" class="nav__link"
-                >Activities</nuxt-link
-              >
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/team" class="nav__link">Team</nuxt-link>
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/advisors" class="nav__link">Advisors</nuxt-link>
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/about" class="nav__link">About</nuxt-link>
+            <li
+              class="nav__list-item"
+              v-for="item in dropdown_items"
+              :key="item.name"
+            >
+              <nuxt-link :to="item.link" class="nav__link">{{
+                item.name
+              }}</nuxt-link>
             </li>
           </ul>
         </li>
       </ul>
     </nav>
-    <label for="nav-toggle" class="nav-toggle-label">
+    <div @click="navActive = !navActive" class="nav-toggle-label">
       <span></span>
-    </label>
+    </div>
   </div>
 </template>
 
 <script>
+// import * as Hammer from 'hammerjs'
+
+// Vue.directive("tap", {
+// 	bind: function(el, binding) {
+// 		if (typeof binding.value === "function") {
+// 			const mc = new Hammer(el);
+// 			mc.on("tap", binding.value);
+// 		}
+// 	}
+// });
+
 export default {
-  name: 'navBar',
-}
+  name: "navBar",
+  data() {
+    return {
+      navActive: false,
+      dropdownActive: false,
+      nav_items: [
+        {
+          name: "Viewfinder",
+          type: "external",
+          link: "https://viewfinder.supasust.org/",
+        },
+        {
+          name: "Gallery",
+          type: "internal",
+          link: "/gallery",
+        },
+        {
+          name: "Events",
+          type: "internal",
+          link: "/events",
+        },
+      ],
+      dropdown: true,
+      dropdown_name: "About Us",
+      dropdown_items: [
+        {
+          name: "Activities",
+          type: "internal",
+          link: "/activities",
+        },
+        {
+          name: "Team",
+          type: "internal",
+          link: "/team",
+        },
+        {
+          name: "Advisors",
+          type: "internal",
+          link: "/advisors",
+        },
+        {
+          name: "About",
+          type: "internal",
+          link: "/about",
+        },
+      ],
+    };
+  },
+};
 </script>
 
 <style lang="scss" scoped>
@@ -59,16 +112,6 @@ export default {
     font-size: 2em;
   }
 }
-
-.nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
-
-// .nav-toggle:focus ~ .nav-toggle-label {
-//   outline: 3px solid rgba(lightblue, 0.75);
-// }
 
 .nav-toggle-label {
   position: absolute;
@@ -93,7 +136,7 @@ export default {
 
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -105,7 +148,7 @@ export default {
   top: 7px;
 }
 
-.nav-toggle:checked ~ nav {
+.nav-active {
   visibility: visible;
   opacity: 1;
 }
@@ -116,20 +159,10 @@ export default {
   }
 }
 
-.sub-nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
-
-// .sub-nav-toggle:focus ~ .sub-nav-toggle-label {
-//   outline: 3px solid rgba(lightblue, 0.75);
+// .sub-nav-toggle:checked + label + ul {
+//   visibility: visible;
+//   opacity: 1;
 // }
-
-.sub-nav-toggle:checked + label + ul {
-  visibility: visible;
-  opacity: 1;
-}
 
 @media (max-width: 800px) {
   nav {
@@ -197,7 +230,7 @@ export default {
   font-size: 0.9rem;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: var(--spacing);
@@ -214,8 +247,16 @@ export default {
 }
 
 .dropdown {
+  --spacing: 1em;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  padding: calc(var(--spacing) / 2) var(--spacing);
   position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
 
   .no-underline::after {
     all: unset;
@@ -226,9 +267,12 @@ export default {
   }
 
   &:hover > ul,
-  &:focus > ul,
-  &:active > ul,
   ul:hover {
+    visibility: visible;
+    opacity: 100%;
+  }
+
+  .dropdown-active {
     visibility: visible;
     opacity: 100%;
   }
