@@ -3,10 +3,9 @@
     <a href="#">
       <div class="content">
         <h4>
-          Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-          do eiusmod tempor incididunt.
+          {{ caption }}
         </h4>
-        <img src="~/assets/images/vf-photo-2.jpg" alt="" />
+        <img :src="require(`../assets/images/${img}`)" alt="" />
       </div>
     </a>
   </div>

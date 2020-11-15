@@ -2,8 +2,8 @@
     <div>
         <a href="#">
             <div class="container">
-                <img src="~/assets/images/vf-photo-2.jpg" alt="">
-                <h4>Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</h4>
+                <img v-if="img" :src="require(`../assets/images/${img}`)" alt="">
+                <h4>{{ caption }}</h4>
             </div>
         </a>
     </div>
@@ -12,7 +12,16 @@
 <script>
 export default {
     name: 'vfSmall',
-    props: ['img', 'caption']
+    props: {
+    img: {
+      type: String,
+    },
+    caption: {
+      type: String,
+      default:
+        'Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
+    },
+  }
 }
 </script>
 
@@ -21,6 +30,7 @@ export default {
     background-color: rgba(0, 0, 0, 0.51);
     display: flex;
     align-items: center;
+    min-height: 20vh;
 }
 
 img {

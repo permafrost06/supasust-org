@@ -16,11 +16,11 @@
     </div> -->
     <h2 class="h2-underline">Viewfinder Articles</h2>
     <div class="vfpanel">
-      <vfBig class="big" />
+      <vfBig class="big" v-bind="articles[0]" />
       <div class="small">
-        <vfSmall />
-        <vfSmall />
-        <vfSmall />
+        <vfSmall v-bind="articles[1]" />
+        <vfSmall v-bind="articles[2]" />
+        <vfSmall v-bind="articles[3]" />
       </div>
     </div>
     <section class="team">
@@ -67,6 +67,27 @@ export default {
   },
   data() {
     return {
+      articles: [
+        {
+          id: 2,
+          img: "article-2.jpg",
+          caption: "Street Photography using Mobile Phone Camera"
+        },
+        {
+          id: 1,
+          caption: "Photography: From Passion to Profession"
+        },
+        {
+          id: 3,
+          img: "article-3.png",
+          caption: "Mobile Photography: Take your photography to the next level"
+        },
+        {
+          id: 4,
+          img: "article-4.jpg",
+          caption: "সাদাকালো ছবি ও তৎ সম্পর্কিত অন্যান্য বিষয়াবলী"
+        }
+      ],
       members: [
         {
           id: 1,
