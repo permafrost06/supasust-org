@@ -1,15 +1,6 @@
 <template>
   <div class="container">
     <h1>Our Activities</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Et provident
-      repudiandae inventore perferendis impedit sunt aliquam quisquam quas! Hic
-      quaerat magni earum vel. Est soluta voluptatum molestiae eveniet, sequi
-      aspernatur. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-      Odit, necessitatibus placeat ex vitae suscipit aliquid eius natus
-      veritatis sunt, facilis ea repellat explicabo beatae, unde quaerat
-      architecto. Odio, nostrum laborum.
-    </p>
     <div v-for="activity in activities" v-bind:key="activity.id">
       <imageLeftTile v-if="activity.id % 2 != 0" v-bind="activity" />
       <imageRightTile v-if="activity.id % 2 == 0" v-bind="activity" />
@@ -31,31 +22,30 @@ export default {
       activities: [
         {
           id: 1,
-          img: 'vf-photo-1.jpg',
-          heading: 'Headline 1',
+          img: 'activities/bpc.jpg',
+          heading: 'Basic Photography Course',
           blurb:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat id fugit, reprehenderit aperiam earum dolorum facilis modi tempora doloremque, commodi molestiae eligendi. Commodi esse eius impedit id distinctio incidunt ipsum.',
+            'A yearly basic course for all photography enthusiasts who are willing & passionate to start photography.',
         },
         {
           id: 2,
-          img: 'vf-photo-2.jpg',
-          heading: 'Headline 2',
+          heading: 'Advance Photography Course',
           blurb:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat id fugit, reprehenderit aperiam earum dolorum facilis modi tempora doloremque, commodi molestiae eligendi. Commodi esse eius impedit id distinctio incidunt ipsum.',
+            'An advance course on a particular category or genre. To explore that specific category more and work with it.',
         },
         {
           id: 3,
-          img: 'vf-photo-3.jpg',
-          heading: 'Headline 3',
+          img: 'activities/photo-adda.jpg',
+          heading: 'Photo-Adda',
           blurb:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat id fugit, reprehenderit aperiam earum dolorum facilis modi tempora doloremque, commodi molestiae eligendi. Commodi esse eius impedit id distinctio incidunt ipsum.',
+            "A weekly discourse among photography enthusiasts. We show each other's photos and discuss about how to improve ourselves. ",
         },
         {
           id: 4,
-          img: 'vf-photo-4.jpg',
-          heading: 'Headline 4',
+          img: 'activities/photo-walk.JPG',
+          heading: 'Photo-Walk',
           blurb:
-            'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat id fugit, reprehenderit aperiam earum dolorum facilis modi tempora doloremque, commodi molestiae eligendi. Commodi esse eius impedit id distinctio incidunt ipsum.',
+            'We try to arrange a short tour twice a month with photography enthusiasts. The main goal is to improve our photography skills on field.',
         },
       ],
     }

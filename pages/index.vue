@@ -5,11 +5,8 @@
         <h1 class="supa-font logo">
           Shahjalal University Photographers' Association
         </h1>
-        <p class="big-text">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Rem illo
-          voluptatum exercitationem nam reiciendis totam distinctio, nihil
-          dolore atque ipsum laborum officiis! Incidunt voluptatibus itaque ex
-          sapiente nobis. Iste, non.
+        <p class="big-text" style="padding-right: 1em">
+          Shahjalal University Photographers' Association (SUPA) is the photography club of Shahjalal University of Science and Technology (SUST), Sylhet. SUPA has been working for advancement in the field of photography both in SUST campus and outside since its founding in 1996.
         </p>
       </div>
       <img class="section-img" src="~/assets/images/landing-top.jpg" alt="" />
@@ -30,11 +27,8 @@
       <div class="section-text">
         <h2 class="h2-underline">Our Team</h2>
         <div class="description">
-          <p class="no-padding">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum autem
-            quia, perferendis voluptatum aperiam aliquid nostrum praesentium
-            saepe facilis molestiae cumque, dolorum eius consectetur quas quidem
-            atque, vero nesciunt possimus.
+          <p class="no-padding" style="padding-right: 1em">
+            SUPA is led by a diverse team of university students who come from all corners of Bangladesh. Currently SUPA is led by the 23rd Executive Committee.
           </p>
         </div>
       </div>

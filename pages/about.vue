@@ -4,26 +4,10 @@
       <h1>About <span class="supa-font">SUPA</span></h1>
       <img class="full-width" src="~/assets/images/history.jpg" alt="" />
       <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam quam
-        sit quidem, maiores expedita nemo eius molestias minima totam
-        asperiores, modi pariatur? Obcaecati ratione totam vitae ea deserunt et
-        magni. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae
-        molestias ut, incidunt in dicta culpa ipsum, rerum similique inventore
-        porro, ea ab? Iste sunt nulla repudiandae sapiente cupiditate!
-        Accusantium, voluptatibus. Lorem, ipsum dolor sit amet consectetur
-        adipisicing elit. Optio, quaerat? Ipsum eveniet, sint quae iusto
-        deleniti vitae ratione atque sunt aspernatur esse. Accusamus tempore sed
-        commodi pariatur, sint eaque fugiat! Lorem ipsum dolor sit, amet
-        consectetur adipisicing elit. Distinctio laudantium, incidunt officia,
-        fugiat tenetur beatae dolores quisquam iure facilis error amet, aliquam
-        illo ex maxime voluptatibus tempora laboriosam iusto soluta. Lorem ipsum
-        dolor sit amet consectetur adipisicing elit. Veritatis architecto amet
-        quisquam incidunt optio. Sint unde mollitia veritatis dolore
-        necessitatibus eum quisquam, suscipit, ratione error deleniti ut? Minus,
-        natus est? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
-        quaerat sequi alias repellendus fugiat, earum, nisi dolorum hic magnam
-        debitis officiis perferendis dolores voluptatum ullam veniam fuga? Unde,
-        quis ipsam?
+        Shahjalal University Photographers' Association (SUPA) is the Shahjalal University of Science & Technology based photography organization estimated in 1996. "Photography for Mankind with Artistry" with this motto SUPA have been working since then for photography & photography enthusiasts. We arrange intra-campus, national and international exhibitions. Organize basic & advance photography courses. As an art based organization we also collab with visual artists & share experiences. We also have our own photography magazine "Viewfinder".
+      </p>
+      <p>
+        We have weekly and monthly activities for photography enthusiasts and practitioners. We also try to arrange and join in different social welfare activities.
       </p>
     </section>
   </div>
