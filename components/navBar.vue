@@ -9,9 +9,9 @@
         <li class="nav__list-item">
           <nuxt-link to="/" class="nav__link">Viewfinder</nuxt-link>
         </li>
-        <li class="nav__list-item">
+        <!-- <li class="nav__list-item">
           <nuxt-link to="/" class="nav__link">Gallery</nuxt-link>
-        </li>
+        </li> -->
         <li class="nav__list-item">
           <nuxt-link to="/events" class="nav__link">Events</nuxt-link>
         </li>
