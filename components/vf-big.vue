@@ -1,6 +1,6 @@
 <template>
   <div class="vfbig-container">
-    <a href="#">
+    <a :href="link">
       <div class="content">
         <h4>
           {{ caption }}
@@ -24,6 +24,9 @@ export default {
       default:
         'Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
     },
+    link: {
+      type: String,
+    }
   },
 }
 </script>

@@ -71,21 +71,25 @@ export default {
         {
           id: 2,
           img: "article-2.jpg",
-          caption: "Street Photography using Mobile Phone Camera"
+          caption: "Street Photography using Mobile Phone Camera",
+          link: "https://viewfinder.supasust.org/street-photography-using-mobile-phone-camera"
         },
         {
           id: 1,
-          caption: "Photography: From Passion to Profession"
+          caption: "Photography: From Passion to Profession",
+          link: "https://viewfinder.supasust.org/photography-from-passion-to-profession"
         },
         {
           id: 3,
           img: "article-3.png",
-          caption: "Mobile Photography: Take your photography to the next level"
+          caption: "Mobile Photography: Take your photography to the next level",
+          link: "https://viewfinder.supasust.org/mobile-photography-take-your-photography-to-the-next-level"
         },
         {
           id: 4,
           img: "article-4.jpg",
-          caption: "সাদাকালো ছবি ও তৎ সম্পর্কিত অন্যান্য বিষয়াবলী"
+          caption: "সাদাকালো ছবি ও তৎ সম্পর্কিত অন্যান্য বিষয়াবলী",
+          link: "https://viewfinder.supasust.org/black-and-white-photography-and-subsequent"
         }
       ],
       members: [
