@@ -29,6 +29,7 @@ export default {
         },
         {
           id: 2,
+          img: 'activities/apc.jpg',
           heading: 'Advance Photography Course',
           blurb:
             'An advance course on a particular category or genre. To explore that specific category more and work with it.',

@@ -22,6 +22,7 @@ export default {
       events: [
         {
           id: 1,
+          img: 'events/visual-festival.jpg',
           heading: 'Visual Festival',
           blurb:
             "We arrange this program to bring different types of visual art practitioners together and share each others' views.",
