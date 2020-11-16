@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="#">
+        <a :href="link">
             <div class="container">
                 <img v-if="img" :src="require(`../assets/images/${img}`)" alt="">
                 <h4>{{ caption }}</h4>
@@ -21,6 +21,9 @@ export default {
       default:
         'Headline: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.',
     },
+    link: {
+        type: String
+    }
   }
 }
 </script>
