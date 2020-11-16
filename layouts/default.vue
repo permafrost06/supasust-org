@@ -17,12 +17,7 @@ import footerBar from '../components/footerBar'
 export default {
   components: {
     navBar, footerBar
-  },
-  // head: {
-  //    bodyAttrs: {
-  //      'ontouchstart': ''
-  //    }
-  // }
+  }
 }
 </script>
 
