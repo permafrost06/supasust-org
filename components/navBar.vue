@@ -7,7 +7,7 @@
     <nav class="main-nav">
       <ul class="nav__list">
         <li class="nav__list-item">
-          <nuxt-link to="/" class="nav__link">Viewfinder</nuxt-link>
+          <nuxt-link to="https://viewfinder.supasust.org/" class="nav__link">Viewfinder</nuxt-link>
         </li>
         <!-- <li class="nav__list-item">
           <nuxt-link to="/" class="nav__link">Gallery</nuxt-link>
