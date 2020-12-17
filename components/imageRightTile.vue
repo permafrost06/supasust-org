@@ -7,14 +7,16 @@
           {{ blurb }}
         </p>
       </div>
-      <img :src="require(`../assets/images/${img}`)" alt="" />
+      <div class="img-holder">
+        <img :src="require(`../assets/images/${img}`)" alt="" />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'imageRightTile',
+  name: 'imageLeftTile',
   props: {
     img: {
       type: String,
@@ -22,37 +24,44 @@ export default {
     },
     heading: String,
     blurb: String,
-  },
+  }
 }
 </script>
 
 <style lang="scss" scoped>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .container {
+  color: white;
+  font-family: "Montserrat";
+
   background-color: rgba(0, 0, 0, 0.51);
   display: flex;
   align-items: center;
 
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     flex-direction: column-reverse;
-
-    .description {
-      padding: 1em 2em;
-    }
   }
 }
 
+.img-holder {
+  width: 100%;
+}
+
 img {
-  width: 50vw;
-  min-width: 30vw;
-  object-fit: cover;
-  padding: 1.5em;
+  flex: 1;
+  padding: 1em;
+  width: 100%;
+  min-height: 0;
 }
 
 .description {
-  padding: 0 0.5em 0 2em;
-}
-
-h2 {
-  margin: 5px;
+  padding: 1em;
+  padding-top: 0;
 }
 </style>

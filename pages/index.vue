@@ -32,11 +32,13 @@
           </p>
         </div>
       </div>
-      <img
-        class="section-img-landscape"
-        src="~/assets/images/team-photo.jpg"
-        alt=""
-      />
+      <div class="image-holder">
+        <img
+          class="section-img-landscape"
+          src="~/assets/images/team-photo.jpg"
+          alt=""
+        />
+      </div>
     </section>
     <div class="member-section">
       <h2 class="h2-underline-center">Executive Committee</h2>
@@ -150,7 +152,10 @@ section {
   }
 
   .section-img-landscape {
-    width: 100vw;
+    flex: 1;
+    padding: 1em;
+    width: 100%;
+    min-height: 0;
   }
 
   @media (max-width: 850px) {
@@ -163,10 +168,6 @@ section {
     .section-img {
       max-height: 40vh;
       max-width: 80vw;
-    }
-
-    .section-img-landscape {
-      width: 80vw;
     }
   }
 }

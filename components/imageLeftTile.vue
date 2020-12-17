@@ -1,7 +1,9 @@
 <template>
   <div>
     <div class="container">
-      <img :src="require(`../assets/images/${img}`)" alt="" />
+      <div class="img-holder">
+        <img :src="require(`../assets/images/${img}`)" alt="" />
+      </div>
       <div class="description">
         <h2 class="h2-underline">{{ heading }}</h2>
         <p>
@@ -27,32 +29,39 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .container {
+  color: white;
+  font-family: "Montserrat";
+
   background-color: rgba(0, 0, 0, 0.51);
   display: flex;
   align-items: center;
 
-  @media (max-width: 800px) {
-    flex-direction: column;
-
-    .description {
-      padding: 1em 2em;
-    }
+  @media (max-width: 900px) {
+    display: block;
   }
 }
 
+.img-holder {
+  width: 100%;
+}
+
 img {
-  width: 50vw;
-  min-width: 30vw;
-  object-fit: cover;
-  padding: 1.5em;
+  flex: 1;
+  padding: 1em;
+  width: 100%;
+  min-height: 0;
 }
 
 .description {
-  padding: 0 1.5em 0 0.5em;
-}
-
-h2 {
-  margin: 5px;
+  padding: 1em;
+  padding-top: 0;
 }
 </style>
