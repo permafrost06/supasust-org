@@ -24,6 +24,6 @@ jobs:
         server: supasust.org
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        local-dir: ./dist
-        server-dir: public_html
+        local-dir: ./dist/
+        server-dir: public_html/
         dry-run: true
