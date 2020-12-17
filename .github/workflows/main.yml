@@ -16,7 +16,7 @@ jobs:
     - name: 🔨 Build Project
       run: |
         npm install
-        npm run build
+        npm run generate
     
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.0.0
@@ -24,6 +24,6 @@ jobs:
         server: supasust.org
         username: ${{ secrets.FTP_USER }}
         password: ${{ secrets.FTP_PASS }}
-        local-dir: ./dist/
+        local-dir: dist/
         server-dir: public_html/
         dry-run: true
