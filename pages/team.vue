@@ -27,18 +27,24 @@ export default {
           img: 'members/Shohan Ur Rahaman.jpg',
           name: 'Shohan Ur Rahman',
           designation: 'President',
+          about: 'Department of Oceanography',
+          flickr: 'https://www.flickr.com/photos/185360418@N06/',
+          insta: 'shohan_220'
         },
         {
           id: 2,
           img: 'members/Sakeef Wahed.jpg',
           name: 'Sakeef Wahed',
           designation: 'Vice-President',
+          about: 'Department of Petroleum and Mining Engineering'
         },
         {
           id: 3,
           img: 'members/Adila Zaman.jpg',
           name: 'Adila Zaman',
           designation: 'Vice-President',
+          about: 'Department of Architecture',
+          insta: 'adilazaman'
         },
         {
           id: 4,
