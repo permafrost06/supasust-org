@@ -1,10 +1,11 @@
 <template>
-  <figure v-click-outside="outsideTouch" @touchstart="isHovered = !isHovered" class="member-container">
+  <figure v-click-outside="outsideTouch" class="member-container">
     <img
       :src="require(`../assets/images/${img}`)"
       alt=""
       height="250px"
       width="250px"
+      @touchstart="isHovered = !isHovered"
     />
     <figcaption :class="{'hovered': isHovered}">
       <div class="member-personal-info">
