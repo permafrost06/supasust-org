@@ -208,6 +208,14 @@ section {
     justify-content: space-evenly;
     gap: 0.5em;
     grid-template-columns: repeat(3, 1fr);
+    
+    @media (max-width: 990px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
+    @media (max-width: 660px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 }
 </style>
