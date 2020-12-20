@@ -8,12 +8,12 @@
       @touchstart="isHovered = !isHovered"
     />
     <figcaption :class="{'hovered': isHovered}">
-      <div class="member-personal-info">
+      <div class="member-personal-info" @touchstart="isHovered = !isHovered">
         <h3>{{ name }}</h3>
         <span>{{ designation }}</span>
       </div>
       <div :class="['member-about', {'member-about-hovered': isHovered}]">
-        <p>{{ about }}</p>
+        <p @touchstart="isHovered = !isHovered">{{ about }}</p>
         <div class="social-icons">
             <a v-if="flickr" :href="flickr" target="_blank">
                 <font-awesome-icon
@@ -94,6 +94,7 @@ export default {
   }
 
   .member-container {
+    display: inline-block;
     position: relative;
     color: white;
     font-family: "Montserrat", Sans-serif;
