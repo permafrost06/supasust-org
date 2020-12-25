@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 class="supa-font logo"><nuxt-link to="/" exact>SUPA</nuxt-link></h1>
+    <h1 @click="closeNav" class="supa-font logo"><nuxt-link to="/" exact>SUPA</nuxt-link></h1>
     <nav :class="{'nav-visible':navVisible}">
       <ul>
         <li class="nav__list-item" @click="closeNav" v-for="item in nav_items" :key="item.name">
@@ -59,7 +59,6 @@ export default {
       this.navVisible = !this.navVisible;
     },
     closeNav() {
-      console.log('page loaded');
       this.navVisible = false;
     }
   }
