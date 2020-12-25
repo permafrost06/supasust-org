@@ -9,6 +9,7 @@
         <p>
           {{ blurb }}
         </p>
+        <slot></slot>
       </div>
     </div>
   </div>

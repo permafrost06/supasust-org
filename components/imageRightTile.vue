@@ -6,6 +6,7 @@
         <p>
           {{ blurb }}
         </p>
+        <slot></slot>
       </div>
       <div class="img-holder">
         <img :src="require(`../assets/images/${img}`)" alt="" />
