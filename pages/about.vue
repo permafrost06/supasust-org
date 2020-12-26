@@ -12,17 +12,23 @@
       <imageLeftTile img="advisors.jpg" heading="Advisors" blurb="SUPA wouldn't be where it stands today if it was not for the support of our beloved advisors."> <nuxt-link to="/advisors"><button>Meet our advisors <font-awesome-icon :icon="['fas', 'chevron-right']" /></button></nuxt-link> </imageLeftTile>
       <imageRightTile img="team-photo.jpg" heading="Executive Committee" blurb="Meet the minds behind Shahjalal University Photographers' Association."> <nuxt-link to="/team"><button>See executive committee <font-awesome-icon :icon="['fas', 'chevron-right']" /></button></nuxt-link> </imageRightTile>
     </section>
+    <section class="timeline-section">
+      <h2 class="h2-underline-center"><span class="supa-font">SUPA</span> Timeline</h2>
+      <timeline />
+    </section>
   </div>
 </template>
 
 <script>
 import imageLeftTile from '../components/imageLeftTile'
 import imageRightTile from '../components/imageRightTile'
+import timeline from '../components/timeline'
 
 export default {
   components: {
     imageLeftTile,
     imageRightTile,
+    timeline
   },
 }
 </script>
@@ -100,5 +106,11 @@ export default {
 
 section {
     padding-bottom: 10vh;
+}
+
+.timeline-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
