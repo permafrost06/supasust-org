@@ -44,6 +44,9 @@ export default {
 
 .full-width {
   overflow: hidden;
+  position: relative;
+  padding-bottom: 0;
+  margin-bottom: 10vh;
 
   img {
     width: 100vw;
@@ -53,21 +56,22 @@ export default {
 
   p {
     position: absolute;
-    bottom: 1em;
-    right: 5vw;
+    bottom: 0;
+    right: 0;
     text-align: right;
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
-    font-weight: 800;
+    font-weight: 500;
     font-size: 1.25em;
     width: 45vw;
     padding: 1em;
+    margin: 1em;
   }
 
   .supa-font {
     font-family: "Bauhaus 93";
     font-size: 1.25em;
-    line-heighT: 1em;
+    line-height: 1em;
     font-weight: 500;
   }
 
@@ -75,7 +79,6 @@ export default {
     p {
       font-size: 1em;
       width: 80vw;
-      bottom: 5em;
     }
   }
 }
