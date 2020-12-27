@@ -15,33 +15,35 @@
       </div>
       <img class="section-img" src="~/assets/images/landing-top.jpg" alt="" />
     </section>
-    <div class="carousel-container">
-      <splide :options="options" class="slider">
-        <splide-slide>
-          <img src="https://source.unsplash.com/featured/?nature&sky" />
-          <div class="caption">
-            <h2>Event name</h2>
-            <p class="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Aspernatur excepturi itaque, vitae dolorem reprehenderit assumenda
-              earum tempore cupiditate quae magnam cumque repellat iure dolores
-              ea eligendi aliquam possimus odio asperiores?
-            </p>
-          </div>
-        </splide-slide>
-        <splide-slide>
-          <img src="https://source.unsplash.com/featured/?portrait" />
-        </splide-slide>
-        <splide-slide>
-          <img src="https://source.unsplash.com/random/" />
-        </splide-slide>
-        <template v-slot:controls>
-          <div class="splide__progress">
-            <div class="splide__progress__bar"></div>
-          </div>
-        </template>
-      </splide>
-    </div>
+    <client-only>
+      <div class="carousel-container">
+        <splide :options="options" class="slider">
+          <splide-slide>
+            <img src="https://source.unsplash.com/featured/?nature&sky" />
+            <div class="caption">
+              <h2>Event name</h2>
+              <p class="description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Aspernatur excepturi itaque, vitae dolorem reprehenderit assumenda
+                earum tempore cupiditate quae magnam cumque repellat iure dolores
+                ea eligendi aliquam possimus odio asperiores?
+              </p>
+            </div>
+          </splide-slide>
+          <splide-slide>
+            <img src="https://source.unsplash.com/featured/?portrait" />
+          </splide-slide>
+          <splide-slide>
+            <img src="https://source.unsplash.com/random/" />
+          </splide-slide>
+          <template v-slot:controls>
+            <div class="splide__progress">
+              <div class="splide__progress__bar"></div>
+            </div>
+          </template>
+        </splide>
+      </div>
+    </client-only>
     <h2 class="h2-underline">Viewfinder Articles</h2>
     <div class="vfpanel">
       <vfBig class="big" v-bind="articles[0]" />
@@ -93,7 +95,7 @@ import carousel from "../components/carousel";
 if (process.client) {
   var Splide = require("@splidejs/vue-splide").Splide;
   var SplideSlide = require("@splidejs/vue-splide").SplideSlide;
-  require("@splidejs/splide/dist/css/themes/splide-sea-green.min.css");
+  require("@splidejs/splide/dist/css/themes/splide-skyblue.min.css");
 }
 
 export default {
@@ -259,6 +261,14 @@ section {
     p {
       margin: 0;
       padding: 0;
+    }
+
+    @media (max-width: 675px) {
+      padding: 0.5em;
+
+      p {
+        font-size: 0.7em;
+      }
     }
   }
 }
