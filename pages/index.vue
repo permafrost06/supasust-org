@@ -19,22 +19,37 @@
       <div class="carousel-container">
         <splide :options="options" class="slider">
           <splide-slide>
-            <img src="https://source.unsplash.com/featured/?nature&sky" />
+            <div class="splide__slide__container ">
+              <img src="~/assets/images/carousel/inquest-insight-carousel.jpg" />
+            </div>
             <div class="caption">
-              <h2>Event name</h2>
+              <h2>Inquest Insight</h2>
               <p class="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Aspernatur excepturi itaque, vitae dolorem reprehenderit assumenda
-                earum tempore cupiditate quae magnam cumque repellat iure dolores
-                ea eligendi aliquam possimus odio asperiores?
+                "Inquest Insight" is the finest photography exhibition by SUPA. Our goal is to expose hidden talent and inspire them by giving them an international platform.
               </p>
             </div>
           </splide-slide>
           <splide-slide>
-            <img src="https://source.unsplash.com/featured/?portrait" />
+            <div class="splide__slide__container ">
+              <img src="~/assets/images/carousel/hiraeth-carousel.jpg" />
+            </div>
+            <div class="caption">
+              <h2>Hiraeth</h2>
+              <p class="description">
+                HIRAETH, an intra-SUST photography exhibition is a chance for all the SUSTian to show their talent in photography. ‘Hiraeth’ is a deep, inborn sense of desire of human being for a feeling that is beyond the existence.
+              </p>
+            </div>
           </splide-slide>
           <splide-slide>
-            <img src="https://source.unsplash.com/random/" />
+            <div class="splide__slide__container ">
+              <img src="~/assets/images/carousel/bpc-carousel.jpg" />
+            </div>
+            <div class="caption">
+              <h2>Basic Photography Course</h2>
+              <p class="description">
+                Basic Photography Course (BPC) is a course run by Shahjalal University Photographers' Association to teach  the basics of photography who are interested in photography. SUPA has successfully completed 33rd courses till now.
+              </p>
+            </div>
           </splide-slide>
           <template v-slot:controls>
             <div class="splide__progress">
@@ -113,7 +128,7 @@ export default {
         type: "loop",
         gap: "1rem",
         width: "80vw",
-        heightRatio: 0.56,
+        heightRatio: 9/16,
         cover: true,
         focus: "center",
         autoplay: true,
@@ -241,6 +256,8 @@ section {
 }
 
 .carousel-container {
+  margin: 10vh 0;
+
   img {
     position: relative;
   }
@@ -250,7 +267,7 @@ section {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.7);
     padding: 1em;
 
     h2 {
@@ -262,8 +279,15 @@ section {
       margin: 0;
       padding: 0;
     }
+  }
 
-    @media (max-width: 675px) {
+  @media (max-width: 675px) {
+    img {
+      position: static;
+    }
+
+    .caption {
+      position: static;
       padding: 0.5em;
 
       p {
@@ -315,7 +339,7 @@ section {
       flex-direction: column;
       align-items: center;
       gap: 1em;
-      padding: 0 3em 1em 3em;
+      padding: 0 1em 1em 1em;
     }
 
     .nuxt_link {
