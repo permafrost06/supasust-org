@@ -158,7 +158,6 @@ export default {
         },
         {
           id: 16,
-          img: "members/Tanak Dewan.jpg",
           name: "Tanak Dewan",
           designation: "Creative Field",
           about: "Department of Anthropolgy",
@@ -176,7 +175,7 @@ export default {
         },
         {
         id: 18,
-            img: 'members/Tasrif Jaman Raiyan.jpg',
+            img: 'members/Tasrif Jaman Raiyan.JPG',
             name: 'Tasrif Jaman Raiyan',
             designation: 'Archive Secretary',
             about: 'Department of Statistics',
@@ -238,7 +237,6 @@ export default {
         },
         {
           id: 25,
-          img: "members/Zunaid Pranto.jpg",
           name: "Zunaid Pranto",
           designation: "Film and Documentary Secretary",
           about: "Department of Architecture",
