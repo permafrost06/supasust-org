@@ -1,8 +1,6 @@
 <template>
   <div>
-    <header>
-      <navBar />
-    </header>
+    <navBar />
     <Nuxt />
     <footer>
       <footerBar />
@@ -128,6 +126,18 @@ a {
 
 .full-width {
   width: 100%;
+}
+
+.splide__progress__bar {
+  background: #fff !important;
+}
+
+.splide__pagination__page {
+  background: #444 !important;
+}
+
+.splide__pagination__page.is-active {
+  background: #fff !important;
 }
 
 *,

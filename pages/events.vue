@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <h1>Events</h1>
-    <div v-for="event in events" v-bind:key="event.id">
-      <imageLeftTile v-if="event.id % 2 != 0" v-bind="event" />
-      <imageRightTile v-if="event.id % 2 == 0" v-bind="event" />
+    <div v-for="(event, index) in events" v-bind:key="event.id">
+      <imageLeftTile v-if="index % 2 != 0" v-bind="event" />
+      <imageRightTile v-if="index % 2 == 0" v-bind="event" />
     </div>
   </div>
 </template>
@@ -21,6 +21,13 @@ export default {
     return {
       events: [
         {
+          id: 3,
+          img: 'events/inquest-insight.jpg',
+          heading: 'Inquest Insight',
+          blurb:
+            "An international Photography exhibition, mainly signifying the theme 'Inquest Insight'; which depicts the fragrance of inner-self.",
+        },
+        {
           id: 1,
           img: 'events/visual-festival.jpg',
           heading: 'Visual Festival',
@@ -33,13 +40,6 @@ export default {
           heading: 'Hiraeth',
           blurb:
             'An intra SUST photography exhibition to promote and encourage the photography enthusiasts of our campus.',
-        },
-        {
-          id: 3,
-          img: 'events/inquest-insight.jpg',
-          heading: 'Inquest Insight',
-          blurb:
-            "An international Photography exhibition, mainly signifying the theme 'Inquest Insight'; which depicts the fragrance of inner-self.",
         },
         {
           id: 4,

@@ -6,14 +6,59 @@
           Shahjalal University Photographers' Association
         </h1>
         <p class="big-text" style="padding-right: 1em">
-          Shahjalal University Photographers' Association (SUPA) is the photography club of Shahjalal University of Science and Technology (SUST), Sylhet. SUPA has been working for advancement in the field of photography both in SUST campus and outside since its founding in 1996.
+          Shahjalal University Photographers' Association (SUPA) is the
+          photography club of Shahjalal University of Science and Technology
+          (SUST), Sylhet. SUPA has been working for advancement in the field of
+          photography both in SUST campus and outside since its founding in
+          1996.
         </p>
       </div>
       <img class="section-img" src="~/assets/images/landing-top.jpg" alt="" />
     </section>
-    <!-- <div class="carousel-container">
-      <carousel class="carousel"/>
-    </div> -->
+    <client-only>
+      <div class="carousel-container">
+        <splide :options="options" class="slider">
+          <splide-slide>
+            <div class="splide__slide__container ">
+              <img src="~/assets/images/carousel/inquest-insight-carousel.jpg" />
+            </div>
+            <div class="caption">
+              <h2>Inquest Insight</h2>
+              <p class="description">
+                "Inquest Insight" is the finest photography exhibition by SUPA. Our goal is to expose hidden talent and inspire them by giving them an international platform.
+              </p>
+            </div>
+          </splide-slide>
+          <splide-slide>
+            <div class="splide__slide__container ">
+              <img src="~/assets/images/carousel/hiraeth-carousel.jpg" />
+            </div>
+            <div class="caption">
+              <h2>Hiraeth</h2>
+              <p class="description">
+                HIRAETH, an intra-SUST photography exhibition is a chance for all the SUSTian to show their talent in photography. ‘Hiraeth’ is a deep, inborn sense of desire of human being for a feeling that is beyond the existence.
+              </p>
+            </div>
+          </splide-slide>
+          <splide-slide>
+            <div class="splide__slide__container ">
+              <img src="~/assets/images/carousel/bpc-carousel.jpg" />
+            </div>
+            <div class="caption">
+              <h2>Basic Photography Course</h2>
+              <p class="description">
+                Basic Photography Course (BPC) is a course run by Shahjalal University Photographers' Association to teach  the basics of photography who are interested in photography. SUPA has successfully completed 33rd courses till now.
+              </p>
+            </div>
+          </splide-slide>
+          <template v-slot:controls>
+            <div class="splide__progress">
+              <div class="splide__progress__bar"></div>
+            </div>
+          </template>
+        </splide>
+      </div>
+    </client-only>
     <h2 class="h2-underline">Viewfinder Articles</h2>
     <div class="vfpanel">
       <vfBig class="big" v-bind="articles[0]" />
@@ -28,7 +73,9 @@
         <h2 class="h2-underline">Our Team</h2>
         <div class="description">
           <p class="no-padding" style="padding-right: 1em">
-            SUPA is led by a diverse team of university students who come from all corners of Bangladesh. Currently SUPA is led by the 23rd Executive Committee.
+            SUPA is led by a diverse team of university students who come from
+            all corners of Bangladesh. Currently SUPA is led by the 23rd
+            Executive Committee.
           </p>
         </div>
       </div>
@@ -55,10 +102,16 @@
 </template>
 
 <script>
-import vfBig from '../components/vf-big'
-import vfSmall from '../components/vf-small'
-import member from '../components/member'
-import carousel from '../components/carousel'
+import vfBig from "../components/vf-big";
+import vfSmall from "../components/vf-small";
+import member from "../components/member";
+import carousel from "../components/carousel";
+
+if (process.client) {
+  var Splide = require("@splidejs/vue-splide").Splide;
+  var SplideSlide = require("@splidejs/vue-splide").SplideSlide;
+  require("@splidejs/splide/dist/css/themes/splide-skyblue.min.css");
+}
 
 export default {
   components: {
@@ -66,57 +119,78 @@ export default {
     vfSmall,
     member,
     carousel,
+    Splide,
+    SplideSlide,
   },
   data() {
     return {
+      options: {
+        type: "loop",
+        gap: "1rem",
+        width: "80vw",
+        heightRatio: 9/16,
+        cover: true,
+        focus: "center",
+        autoplay: true,
+        pauseOnHover: true,
+        pauseOnFocus: false,
+        resetProgress: false,
+        arrows: false,
+        drag: true,
+      },
       articles: [
         {
           id: 2,
           img: "article-2.jpg",
           caption: "Street Photography using Mobile Phone Camera",
-          link: "https://viewfinder.supasust.org/street-photography-using-mobile-phone-camera"
+          link:
+            "https://viewfinder.supasust.org/street-photography-using-mobile-phone-camera",
         },
         {
           id: 1,
           caption: "Photography: From Passion to Profession",
-          link: "https://viewfinder.supasust.org/photography-from-passion-to-profession"
+          link:
+            "https://viewfinder.supasust.org/photography-from-passion-to-profession",
         },
         {
           id: 3,
           img: "article-3.png",
-          caption: "Mobile Photography: Take your photography to the next level",
-          link: "https://viewfinder.supasust.org/mobile-photography-take-your-photography-to-the-next-level"
+          caption:
+            "Mobile Photography: Take your photography to the next level",
+          link:
+            "https://viewfinder.supasust.org/mobile-photography-take-your-photography-to-the-next-level",
         },
         {
           id: 4,
           img: "article-4.jpg",
           caption: "সাদাকালো ছবি ও তৎ সম্পর্কিত অন্যান্য বিষয়াবলী",
-          link: "https://viewfinder.supasust.org/black-and-white-photography-and-subsequent"
-        }
+          link:
+            "https://viewfinder.supasust.org/black-and-white-photography-and-subsequent",
+        },
       ],
       members: [
         {
           id: 1,
-          img: 'members/Shohan Ur Rahaman.jpg',
-          name: 'Shohan Ur Rahman',
-          designation: 'President',
+          img: "members/Shohan Ur Rahaman.jpg",
+          name: "Shohan Ur Rahman",
+          designation: "President",
         },
         {
           id: 5,
-          img: 'members/Prem Raj Saha.jpg',
-          name: 'Prem Raj Saha',
-          designation: 'General Secretary',
+          img: "members/Prem Raj Saha.jpg",
+          name: "Prem Raj Saha",
+          designation: "General Secretary",
         },
         {
           id: 7,
-          img: 'members/Radia Islam.jpg',
-          name: 'Radia Islam',
-          designation: 'Chief Instructor',
+          img: "members/Radia Islam.jpg",
+          name: "Radia Islam",
+          designation: "Chief Instructor",
         },
       ],
-    }
+    };
   },
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -181,14 +255,47 @@ section {
   font-weight: 100;
 }
 
-// .carousel-container {
-//   display: grid;
-//   grid-template-areas: ". carousel .";
+.carousel-container {
+  margin: 10vh 0;
 
-//   .carousel {
-//     grid-area: carousel;
-//   }
-// }
+  img {
+    position: relative;
+  }
+
+  .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 1em;
+
+    h2 {
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  @media (max-width: 675px) {
+    img {
+      position: static;
+    }
+
+    .caption {
+      position: static;
+      padding: 0.5em;
+
+      p {
+        font-size: 0.7em;
+      }
+    }
+  }
+}
 
 .vfpanel {
   display: flex;
@@ -232,7 +339,7 @@ section {
       flex-direction: column;
       align-items: center;
       gap: 1em;
-      padding: 0 3em 1em 3em;
+      padding: 0 1em 1em 1em;
     }
 
     .nuxt_link {

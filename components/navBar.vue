@@ -1,83 +1,81 @@
 <template>
-  <div class="nav">
-    <nuxt-link to="/" class="supa-font logo" aria-label="homepage"
-      >SUPA</nuxt-link
-    >
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
-    <nav class="main-nav">
-      <ul class="nav__list">
-        <li class="nav__list-item">
-          <a href="https://viewfinder.supasust.org/" class="nav__link">Viewfinder</a>
-        </li>
-        <!-- <li class="nav__list-item">
-          <nuxt-link to="/" class="nav__link">Gallery</nuxt-link>
-        </li> -->
-        <li class="nav__list-item">
-          <nuxt-link to="/events" class="nav__link">Events</nuxt-link>
-        </li>
-        <li class="nav__list-item dropdown" tabindex="1">
-          <input type="checkbox" id="sub-nav-toggle" class="sub-nav-toggle" />
-          <label for="sub-nav-toggle" class="nav__link no-underline sub-nav-toggle-label">
-            About Us <font-awesome-icon :icon="['fas', 'chevron-down']" />
-          </label>
-          <ul class="nav__list submenu">
-            <li class="nav__list-item">
-              <nuxt-link to="/activities" class="nav__link"
-                >Activities</nuxt-link
-              >
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/team" class="nav__link">Team</nuxt-link>
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/advisors" class="nav__link">Advisors</nuxt-link>
-            </li>
-            <li class="nav__list-item">
-              <nuxt-link to="/about" class="nav__link">About</nuxt-link>
-            </li>
-          </ul>
+  <header>
+    <h1 @click="closeNav" class="supa-font logo"><nuxt-link to="/" exact>SUPA</nuxt-link></h1>
+    <nav :class="{'nav-visible':navVisible}">
+      <ul>
+        <li class="nav__list-item" @click="closeNav" v-for="item in nav_items" :key="item.name">
+          <nuxt-link
+            :to="item.link"
+            :class="{'nav-link-visible':navVisible}"
+            v-if="item.type == 'internal'"
+            >{{ item.name }}</nuxt-link
+          >
+          <a
+            :href="item.link"
+            :class="{'nav-link-visible':navVisible}"
+            v-if="item.type == 'external'"
+            >{{ item.name }}</a
+          >
         </li>
       </ul>
     </nav>
-    <label for="nav-toggle" class="nav-toggle-label">
+    <label :class="{'cross': navVisible}" @click="toggleNav" class="nav-toggle-label">
       <span></span>
     </label>
-  </div>
+  </header>
 </template>
 
 <script>
 export default {
-  name: 'navBar',
-}
+  data() {
+    return {
+      navVisible: false,
+      nav_items: [
+        {
+          name: "Viewfinder",
+          type: "external",
+          link: "https://viewfinder.supasust.org/",
+        },
+        {
+          name: "Gallery",
+          type: "internal",
+          link: "/gallery",
+        },
+        {
+          name: "Events",
+          type: "internal",
+          link: "/events",
+        },
+        {
+          name: "About Us",
+          type: "internal",
+          link: "/about"
+        }
+      ],
+    };
+  },
+  methods: {
+    toggleNav() {
+      this.navVisible = !this.navVisible;
+    },
+    closeNav() {
+      this.navVisible = false;
+    }
+  }
+};
 </script>
 
-<style lang="scss" scoped>
-.logo {
-  font-size: 3em;
-
-  @media (max-width: 800px) {
-    font-size: 2em;
-  }
-}
-
-.nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
-
-// .nav-toggle:focus ~ .nav-toggle-label {
-//   outline: 3px solid rgba(lightblue, 0.75);
-// }
+<style lang="scss">
 
 .nav-toggle-label {
   position: absolute;
   top: 0;
   left: 0;
-  margin-left: 5vw;
+  margin-left: 1em;
   height: 100%;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .nav-toggle-label span,
@@ -89,6 +87,7 @@ export default {
   width: 2em;
   border-radius: 2px;
   position: relative;
+  transition: all .5s ease-in-out;
 }
 
 .nav-toggle-label span::before,
@@ -98,159 +97,154 @@ export default {
 }
 
 .nav-toggle-label span::before {
-  bottom: 7px;
+  transform: translateY(-7px);
 }
 
 .nav-toggle-label span::after {
-  top: 7px;
+  transform: translateY(7px);
 }
 
-.nav-toggle:checked ~ nav {
-  visibility: visible;
+.cross span {
+  background: transparent;
+  transform: translateY(50px);
+}
+
+.cross span::before {
+  transform: rotate(45deg) translate(-35px, -35px);
+}
+
+.cross span::after {
+  transform: rotate(135deg) translate(-35px, 35px);
+}
+
+/* navigation styles start here */
+
+.logo {
+  font-weight: 300;
+}
+
+header {
+  background: rgba(0, 0, 0, 1);
+  text-align: center;
+  z-index: 999;
+  position: absolute;
+  width: 100%;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: rgba(0, 0, 0, 1);
+  width: 100%;
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #888;
+}
+
+.nav-visible {
+  transform: scale(1,1);
+}
+
+.nav-link-visible {
   opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
 @media screen and (min-width: 800px) {
   .nav-toggle-label {
     display: none;
   }
-}
 
-.sub-nav-toggle {
-  position: absolute !important;
-  top: -9999px !important;
-  left: -9999px !important;
-}
+  header {
+    display: grid;
+    grid-template-columns: 10vw auto minmax(600px, 3fr) 10vw;
+  }
 
-// .sub-nav-toggle:focus ~ .sub-nav-toggle-label {
-//   outline: 3px solid rgba(lightblue, 0.75);
-// }
+  .logo {
+    grid-column: 2 / 3;
+    font-size: 3em;
+  }
 
-.sub-nav-toggle:checked + label + ul {
-  visibility: visible;
-  opacity: 1;
-}
-
-@media (max-width: 800px) {
   nav {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 250ms ease-in;
-  }
-}
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
 
-.nav {
-  --text: #f4f4f4;
-  --text-inverse: #333;
-  --background: rgba(0, 0, 0, 1);
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1,1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 999;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5em 10vw;
-  transition: background 250ms ease-in;
-  background: var(--background);
-  color: var(--text);
-
-  @media (max-width: 800px) {
-    display: block;
-    text-align: center;
-    padding: 1em 5vw;
-  }
-}
-
-.nav__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-
-  @media (max-width: 800px) {
-    position: absolute;
-    flex-direction: column;
-    text-align: center;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    background: var(--background);
-
-    .nav__link {
-      padding: 1em 0;
-    }
-  }
-}
-
-.nav__link {
-  --spacing: 1em;
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-  padding: calc(var(--spacing) / 2) var(--spacing);
-  position: relative;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
-
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: var(--spacing);
-    right: var(--spacing);
-    height: 2px;
-    background: currentColor;
-    transform: scaleX(0);
-    transition: transform 150ms ease-in-out;
-  }
-
-  &:hover::after {
-    transform: scaleX(1);
-  }
-}
-
-.dropdown {
-  cursor: pointer;
-  position: relative;
-
-  .no-underline::after {
-    all: unset;
-  }
-
-  .no-underline:hover::after {
-    all: unset;
-  }
-
-  &:hover > ul,
-  &:focus > ul,
-  &:active > ul,
-  ul:hover {
-    visibility: visible;
-    opacity: 100%;
-  }
-
-  ul {
-    padding: 0.5em 0;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    width: 10em;
+    grid-column: 3 / 4;
     display: flex;
-    flex-direction: column;
-    background: var(--background);
-    transition: all 0.5s ease;
-
-    @media (max-width: 800px) {
-      width: 100%;
-    }
-
-    li {
-      padding: 0 1em;
-    }
+    justify-content: flex-end;
+    align-items: center;
   }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::after {
+    content: '';
+    display: block;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: -.75em;
+    left: 0;
+    right: 0;
+    transform: scale(0, 1);
+    transition: transform ease-out 150ms;
+  }
+
+  nav a:hover::after,
+  .nuxt-link-active::after {
+    transform: scale(1,1);
+  }
+}
+
+.nuxt-link-active {
+  font-weight: bold;
 }
 </style>

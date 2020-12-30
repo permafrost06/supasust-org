@@ -7,15 +7,15 @@
             <h2>Contact</h2>
             <ul class="contact">
                 <li>Room No: 102, Physical Centre, SUST, Sylhet-3114</li>
-                <li><a href="#">+880 1915-076164</a></li>
-                <li><a href="#">supa@sust.edu</a></li>
+                <li><a href="tel:+8801915076164">+880 1915-076164</a></li>
+                <li><a href="mailto:supa@sust.edu">supa@sust.edu</a></li>
             </ul>
             <ul class="socials">
                 <li>
-                    <a href="#"><font-awesome-icon class="fa-2x" :icon="['fab', 'instagram-square']" /></a>
+                    <a href="https://instagram.com/supa_sust"><font-awesome-icon class="fa-2x" :icon="['fab', 'instagram-square']" /></a>
                 </li>
                 <li>
-                    <a href="#"><font-awesome-icon class="fa-2x" :icon="['fab', 'facebook-square']" /></a>
+                    <a href="https://www.facebook.com/SupaSust/"><font-awesome-icon class="fa-2x" :icon="['fab', 'facebook-square']" /></a>
                 </li>
             </ul>
         </div>
