@@ -87,7 +87,7 @@ export default {
         {
           id: 8,
           img: "members/Ahmed Fahimul Absar.jpg",
-          name: "Ahmed Fahimul Absar",
+          name: "Ahmad Fahimul Absar",
           designation: "Trainer",
           about: "Department of Architecture",
           flickr: "https://www.flickr.com/photos/ahmadfahimulabsar/",
