@@ -1,9 +1,9 @@
 <template>
   <div class="container">
     <h1>Events</h1>
-    <div v-for="event in events" v-bind:key="event.id">
-      <imageLeftTile v-if="event.id % 2 != 0" v-bind="event" />
-      <imageRightTile v-if="event.id % 2 == 0" v-bind="event" />
+    <div v-for="(event, index) in events" v-bind:key="event.id">
+      <imageLeftTile v-if="index % 2 != 0" v-bind="event" />
+      <imageRightTile v-if="index % 2 == 0" v-bind="event" />
     </div>
   </div>
 </template>
