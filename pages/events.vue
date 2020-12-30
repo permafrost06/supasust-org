@@ -21,6 +21,13 @@ export default {
     return {
       events: [
         {
+          id: 3,
+          img: 'events/inquest-insight.jpg',
+          heading: 'Inquest Insight',
+          blurb:
+            "An international Photography exhibition, mainly signifying the theme 'Inquest Insight'; which depicts the fragrance of inner-self.",
+        },
+        {
           id: 1,
           img: 'events/visual-festival.jpg',
           heading: 'Visual Festival',
@@ -33,13 +40,6 @@ export default {
           heading: 'Hiraeth',
           blurb:
             'An intra SUST photography exhibition to promote and encourage the photography enthusiasts of our campus.',
-        },
-        {
-          id: 3,
-          img: 'events/inquest-insight.jpg',
-          heading: 'Inquest Insight',
-          blurb:
-            "An international Photography exhibition, mainly signifying the theme 'Inquest Insight'; which depicts the fragrance of inner-self.",
         },
         {
           id: 4,
