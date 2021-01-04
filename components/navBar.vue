@@ -14,6 +14,7 @@
             :href="item.link"
             :class="{'nav-link-visible':navVisible}"
             v-if="item.type == 'external'"
+            target="_blank"
             >{{ item.name }}</a
           >
         </li>
