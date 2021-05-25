@@ -19,35 +19,45 @@
       <div class="carousel-container">
         <splide :options="options" class="slider">
           <splide-slide>
-            <div class="splide__slide__container ">
-              <img src="~/assets/images/carousel/inquest-insight-carousel.jpg" />
+            <div class="splide__slide__container">
+              <img src="~/assets/images/carousel/hiraeth-iv.jpg" />
+            </div>
+            <nuxt-link to="/hiraeth-iv-exhibition" class="slide-link">
+              <div class="caption">
+                <h2>Hiraeth</h2>
+                <p class="description">
+                  HIRAETH IV, the fourth installment of our intra-SUST
+                  photography exhibition is live now! Click here to visit!
+                </p>
+              </div>
+            </nuxt-link>
+          </splide-slide>
+          <splide-slide>
+            <div class="splide__slide__container">
+              <img
+                src="~/assets/images/carousel/inquest-insight-carousel.jpg"
+              />
             </div>
             <div class="caption">
               <h2>Inquest Insight</h2>
               <p class="description">
-                "Inquest Insight" is the finest photography exhibition by SUPA. Our goal is to expose hidden talent and inspire them by giving them an international platform.
+                "Inquest Insight" is the finest photography exhibition by SUPA.
+                Our goal is to expose hidden talent and inspire them by giving
+                them an international platform.
               </p>
             </div>
           </splide-slide>
           <splide-slide>
-            <div class="splide__slide__container ">
-              <img src="~/assets/images/carousel/hiraeth-carousel.jpg" />
-            </div>
-            <div class="caption">
-              <h2>Hiraeth</h2>
-              <p class="description">
-                HIRAETH, an intra-SUST photography exhibition is a chance for all the SUSTian to show their talent in photography. ‘Hiraeth’ is a deep, inborn sense of desire of human being for a feeling that is beyond the existence.
-              </p>
-            </div>
-          </splide-slide>
-          <splide-slide>
-            <div class="splide__slide__container ">
+            <div class="splide__slide__container">
               <img src="~/assets/images/carousel/bpc-carousel.jpg" />
             </div>
             <div class="caption">
               <h2>Basic Photography Course</h2>
               <p class="description">
-                Basic Photography Course (BPC) is a course run by Shahjalal University Photographers' Association to teach  the basics of photography who are interested in photography. SUPA has successfully completed 33rd courses till now.
+                Basic Photography Course (BPC) is a course run by Shahjalal
+                University Photographers' Association to teach the basics of
+                photography who are interested in photography. SUPA has
+                successfully completed 33rd courses till now.
               </p>
             </div>
           </splide-slide>
@@ -128,7 +138,7 @@ export default {
         type: "loop",
         gap: "1rem",
         width: "80vw",
-        heightRatio: 9/16,
+        heightRatio: 9 / 16,
         cover: true,
         focus: "center",
         autoplay: true,

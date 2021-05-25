@@ -1,18 +1,25 @@
 <template>
   <header>
-    <h1 @click="closeNav" class="supa-font logo"><nuxt-link to="/" exact>SUPA</nuxt-link></h1>
-    <nav :class="{'nav-visible':navVisible}">
+    <h1 @click="closeNav" class="supa-font logo">
+      <nuxt-link to="/" exact>SUPA</nuxt-link>
+    </h1>
+    <nav :class="{ 'nav-visible': navVisible }">
       <ul>
-        <li class="nav__list-item" @click="closeNav" v-for="item in nav_items" :key="item.name">
+        <li
+          class="nav__list-item"
+          @click="closeNav"
+          v-for="item in nav_items"
+          :key="item.name"
+        >
           <nuxt-link
             :to="item.link"
-            :class="{'nav-link-visible':navVisible}"
+            :class="{ 'nav-link-visible': navVisible }"
             v-if="item.type == 'internal'"
             >{{ item.name }}</nuxt-link
           >
           <a
             :href="item.link"
-            :class="{'nav-link-visible':navVisible}"
+            :class="{ 'nav-link-visible': navVisible }"
             v-if="item.type == 'external'"
             target="_blank"
             >{{ item.name }}</a
@@ -20,7 +27,11 @@
         </li>
       </ul>
     </nav>
-    <label :class="{'cross': navVisible}" @click="toggleNav" class="nav-toggle-label">
+    <label
+      :class="{ cross: navVisible }"
+      @click="toggleNav"
+      class="nav-toggle-label"
+    >
       <span></span>
     </label>
   </header>
@@ -33,9 +44,9 @@ export default {
       navVisible: false,
       nav_items: [
         {
-          name: "Viewfinder",
-          type: "external",
-          link: "https://viewfinder.supasust.org/",
+          name: "Hiraeth IV",
+          type: "internal",
+          link: "/hiraeth-iv-exhibition",
         },
         {
           name: "Gallery",
@@ -50,8 +61,8 @@ export default {
         {
           name: "About Us",
           type: "internal",
-          link: "/about"
-        }
+          link: "/about",
+        },
       ],
     };
   },
@@ -61,13 +72,12 @@ export default {
     },
     closeNav() {
       this.navVisible = false;
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style lang="scss">
-
 .nav-toggle-label {
   position: absolute;
   top: 0;
@@ -88,12 +98,12 @@ export default {
   width: 2em;
   border-radius: 2px;
   position: relative;
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -170,7 +180,7 @@ nav a:hover {
 }
 
 .nav-visible {
-  transform: scale(1,1);
+  transform: scale(1, 1);
 }
 
 .nav-link-visible {
@@ -200,7 +210,7 @@ nav a:hover {
     position: relative;
     text-align: left;
     transition: none;
-    transform: scale(1,1);
+    transform: scale(1, 1);
     background: none;
     top: initial;
     left: initial;
@@ -227,12 +237,12 @@ nav a:hover {
   }
 
   nav a::after {
-    content: '';
+    content: "";
     display: block;
     height: 2px;
     background: white;
     position: absolute;
-    bottom: -.75em;
+    bottom: -0.75em;
     left: 0;
     right: 0;
     transform: scale(0, 1);
@@ -241,7 +251,7 @@ nav a:hover {
 
   nav a:hover::after,
   .nuxt-link-active::after {
-    transform: scale(1,1);
+    transform: scale(1, 1);
   }
 }
 
