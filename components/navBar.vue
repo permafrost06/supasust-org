@@ -44,9 +44,9 @@ export default {
       navVisible: false,
       nav_items: [
         {
-          name: "Hiraeth IV",
-          type: "internal",
-          link: "/hiraeth-iv-exhibition",
+          name: "II6 Submission",
+          type: "external",
+          link: "https://submission.supasust.org/",
         },
         {
           name: "Gallery",
