@@ -20,30 +20,29 @@
         <splide :options="options" class="slider">
           <splide-slide>
             <div class="splide__slide__container">
-              <img src="~/assets/images/carousel/hiraeth-iv.jpg" />
-            </div>
-            <nuxt-link to="/hiraeth-iv-exhibition" class="slide-link">
-              <div class="caption">
-                <h2>Hiraeth</h2>
-                <p class="description">
-                  HIRAETH IV, the fourth installment of our intra-SUST
-                  photography exhibition is live now! Click here to visit!
-                </p>
-              </div>
-            </nuxt-link>
-          </splide-slide>
-          <splide-slide>
-            <div class="splide__slide__container">
               <img
                 src="~/assets/images/carousel/inquest-insight-carousel.jpg"
               />
             </div>
+            <a href="https://submission.supasust.org/" target="_blank">
+              <div class="caption">
+                <h2>Inquest Insight</h2>
+                <p class="description">
+                  The call for photos for our International Photography Exhibiton
+                  "Inquest Insight 6: Resilience" is live now! Click here to
+                  submit your photos!
+                </p>
+              </div>
+            </a>
+          </splide-slide>
+          <splide-slide>
+            <div class="splide__slide__container">
+              <img src="~/assets/images/carousel/hiraeth-iv.jpg" />
+            </div>
             <div class="caption">
-              <h2>Inquest Insight</h2>
+              <h2>Hiraeth</h2>
               <p class="description">
-                "Inquest Insight" is the finest photography exhibition by SUPA.
-                Our goal is to expose hidden talent and inspire them by giving
-                them an international platform.
+                HIRAETH is an intra-SUST photography exhibition.
               </p>
             </div>
           </splide-slide>
