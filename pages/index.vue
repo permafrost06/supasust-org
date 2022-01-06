@@ -28,9 +28,9 @@
               <div class="caption">
                 <h2>Inquest Insight</h2>
                 <p class="description">
-                  The call for photos for our International Photography Exhibiton
-                  "Inquest Insight 6: Resilience" is live now! Click here to
-                  submit your photos!
+                  The call for photos for our International Photography
+                  Exhibiton "Inquest Insight 6: Resilience" is live now! Click
+                  here to submit your photos!
                 </p>
               </div>
             </a>
@@ -83,7 +83,7 @@
         <div class="description">
           <p class="no-padding" style="padding-right: 1em">
             SUPA is led by a diverse team of university students who come from
-            all corners of Bangladesh. Currently SUPA is led by the 23rd
+            all corners of Bangladesh. Currently SUPA is led by the 24th
             Executive Committee.
           </p>
         </div>
@@ -152,48 +152,44 @@ export default {
           id: 2,
           img: "article-2.jpg",
           caption: "Street Photography using Mobile Phone Camera",
-          link:
-            "https://viewfinder.supasust.org/street-photography-using-mobile-phone-camera",
+          link: "https://viewfinder.supasust.org/street-photography-using-mobile-phone-camera",
         },
         {
           id: 1,
           caption: "Photography: From Passion to Profession",
-          link:
-            "https://viewfinder.supasust.org/photography-from-passion-to-profession",
+          link: "https://viewfinder.supasust.org/photography-from-passion-to-profession",
         },
         {
           id: 3,
           img: "article-3.png",
           caption:
             "Mobile Photography: Take your photography to the next level",
-          link:
-            "https://viewfinder.supasust.org/mobile-photography-take-your-photography-to-the-next-level",
+          link: "https://viewfinder.supasust.org/mobile-photography-take-your-photography-to-the-next-level",
         },
         {
           id: 4,
           img: "article-4.jpg",
           caption: "সাদাকালো ছবি ও তৎ সম্পর্কিত অন্যান্য বিষয়াবলী",
-          link:
-            "https://viewfinder.supasust.org/black-and-white-photography-and-subsequent",
+          link: "https://viewfinder.supasust.org/black-and-white-photography-and-subsequent",
         },
       ],
       members: [
         {
           id: 1,
-          img: "members/Shohan Ur Rahaman.jpg",
-          name: "Shohan Ur Rahman",
+          img: "members/Radia Islam.jpg",
+          name: "Radia Islam",
           designation: "President",
         },
         {
-          id: 5,
-          img: "members/Prem Raj Saha.jpg",
-          name: "Prem Raj Saha",
+          id: 2,
+          img: "members/Md. Moshiur Rahman.jpg",
+          name: "Md. Moshiur Rahman",
           designation: "General Secretary",
         },
         {
-          id: 7,
-          img: "members/Radia Islam.jpg",
-          name: "Radia Islam",
+          id: 3,
+          img: "members/Ahmad Fahimul Absar.jpg",
+          name: "Ahmad Fahimul Absar",
           designation: "Chief Instructor",
         },
       ],
