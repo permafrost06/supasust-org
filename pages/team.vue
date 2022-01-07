@@ -207,6 +207,7 @@ export default {
         },
         {
           id: 21,
+          img: "members/Aniqa Zahin.jpg",
           name: "Aniqa Zahin",
           designation: "Executive Committee Member",
           about: "Department of Architecture",
@@ -224,6 +225,7 @@ export default {
         },
         {
           id: 23,
+          img: "members/Sanjida Afrin Jeem.jpg",
           name: "Sanjida Afrin Jeem",
           designation: "Executive Committee Member",
           about: "Department of Architecture",
