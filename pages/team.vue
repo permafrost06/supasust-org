@@ -207,7 +207,6 @@ export default {
         },
         {
           id: 21,
-          img: "",
           name: "Aniqa Zahin",
           designation: "Executive Committee Member",
           about: "Department of Architecture",
