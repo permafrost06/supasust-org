@@ -224,7 +224,6 @@ export default {
         },
         {
           id: 23,
-          img: "members/Sanjida Afrin Jeem.jpg",
           name: "Sanjida Afrin Jeem",
           designation: "Executive Committee Member",
           about: "Department of Architecture",
