@@ -142,7 +142,7 @@ export default {
 
         {
           id: 14,
-          img: "members/Simanta Goswami Joy.jpg",
+          img: "members/Simanta Joy.jpg",
           name: "Simanta Goswami Joy",
           designation: "Exhibition Executive",
           about: "Department of English",
@@ -207,7 +207,7 @@ export default {
         },
         {
           id: 21,
-          img: "members/Aniqa Zahin.jpg",
+          img: "",
           name: "Aniqa Zahin",
           designation: "Executive Committee Member",
           about: "Department of Architecture",
